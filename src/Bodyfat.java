@@ -2,19 +2,20 @@ public class Bodyfat {
 	private BodyfatCell[] bodyfatCells;
 	
 	public void ReportThyAmount() {
-		System.out.println("Final Amounts:");
-		for (int i = 0; i < bodyfatCells.length; i++) {
-			System.out.println("Position: " + i + " ... " + "Amount: " + bodyfatCells[i].getBodyfatAmount());
+		System.out.println("................");
+		System.out.println("Current Amounts:");
+		for (int i = 0; i < this.bodyfatCells.length; i++) {
+			System.out.println("Position: " + i + " ... " + "Amount: " + this.bodyfatCells[i].getBodyfatAmount());
 		}		
 	}
 	
 	public void InsertBodyfatCellAtTheEnd(BodyfatCell newCell) {
-		if (bodyfatCells == null || bodyfatCells.length == 0) {
+		if (this.bodyfatCells == null || this.bodyfatCells.length == 0) {
 			this.InsertIntoFatFreeBody(newCell);
 			return;
 		}
 
-		this.ExpandBodyfatByOneNewCellAtTheEnd(newCell);
+		this.ExpandBodyfatByOneNewCellToSpecificPosition(newCell, this.bodyfatCells.length);
 	}
 	
 	public void InsertBodyfatCellAtSpecificPosition(BodyfatCell newCell, int position) throws Exception {
@@ -22,7 +23,7 @@ public class Bodyfat {
             throw new Exception("Position " + position + " is not valid");
         }
         
-        this.ExpandBodyfatByOneNewCellInTheMiddle(newCell, position);
+        this.ExpandBodyfatByOneNewCellToSpecificPosition(newCell, position);
 	}
 	
 	private void InsertIntoFatFreeBody(BodyfatCell newCell) {
@@ -30,23 +31,11 @@ public class Bodyfat {
         this.bodyfatCells[0] = newCell;
 	}
 	
-	private void ExpandBodyfatByOneNewCellAtTheEnd(BodyfatCell newCell) {
-		var newArray = new BodyfatCell[bodyfatCells.length + 1];
-		 
-        for (int i = 0; i < bodyfatCells.length; i++) {
-        	newArray[i] = bodyfatCells[i];        	
-        }
-        
-        newArray[bodyfatCells.length] = newCell;
-        
-        this.bodyfatCells = newArray;
-	}
-	
-	private void ExpandBodyfatByOneNewCellInTheMiddle(BodyfatCell newCell, int position) {
-		var newArray = new BodyfatCell[bodyfatCells.length + 1];
+	private void ExpandBodyfatByOneNewCellToSpecificPosition(BodyfatCell newCell, int position) {
+		var newArray = new BodyfatCell[this.bodyfatCells.length + 1];
 		 
         for (int i = 0; i < position; i++) {
-        	newArray[i] = bodyfatCells[i];        	
+        	newArray[i] = this.bodyfatCells[i];        	
         }
         
         newArray[position] = newCell;
