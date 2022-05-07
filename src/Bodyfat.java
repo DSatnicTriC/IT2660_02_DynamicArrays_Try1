@@ -39,6 +39,7 @@ public class Bodyfat {
         
         if (position == 0 && this.bodyfatCells.length == 1) {
         	this.bodyfatCells = null;
+        	return;
 		}
         
         this.ContractBodyfatByRemovingOneCellFromASpecificPosition(position);
