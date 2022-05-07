@@ -25,7 +25,7 @@ public class BodyfatSimulator {
 		
 		// valid removal
 		RemoveBodyfatCellAtSpecificPosition(0);
-		RemoveBodyfatCellAtSpecificPosition(5);
+		//RemoveBodyfatCellAtSpecificPosition(5);
 		
 		bodyfat.ReportThyAmount();
 	}

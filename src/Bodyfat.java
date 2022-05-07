@@ -66,18 +66,16 @@ public class Bodyfat {
 	}
 	
 	private void ContractBodyfatByRemovingOneCellFromASpecificPosition(int position) {
-//		var newArray = new BodyfatCell[this.bodyfatCells.length + 1];
-//		 
-//        for (int i = 0; i < position; i++) {
-//        	newArray[i] = this.bodyfatCells[i];        	
-//        }
-//        
-//        newArray[position] = newCell;
-// 
-//        for (int i = position + 1; i <= this.bodyfatCells.length; i++) {
-//        	newArray[i] = this.bodyfatCells[i - 1];
-//        }
-//        
-//        this.bodyfatCells = newArray;
+		var newArray = new BodyfatCell[this.bodyfatCells.length - 1];
+		 
+        for (int i = 0; i < position - 1; i++) {
+        	newArray[i] = this.bodyfatCells[i];        	
+        }
+ 
+        for (int i = position + 1; i < this.bodyfatCells.length; i++) {
+        	newArray[i-1] = this.bodyfatCells[i];
+        }
+        
+        this.bodyfatCells = newArray;
 	}
 }
