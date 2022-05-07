@@ -3,10 +3,15 @@ public class Bodyfat {
 	
 	public void ReportThyAmount() {
 		System.out.println("................");
-		System.out.println("Current Amounts:");
-		for (int i = 0; i < this.bodyfatCells.length; i++) {
-			System.out.println("Position: " + i + " ... " + "Amount: " + this.bodyfatCells[i].getBodyfatAmount());
+		if (this.bodyfatCells == null) {
+			System.out.println("Fat Free!!");
 		}
+		else {
+			System.out.println("Current Amounts:");
+			for (int i = 0; i < this.bodyfatCells.length; i++) {
+				System.out.println("Position: " + i + " ... " + "Amount: " + this.bodyfatCells[i].getBodyfatAmount());
+			}
+		}		
 		System.out.println("................");
 	}
 	
@@ -31,6 +36,10 @@ public class Bodyfat {
         if (position < 0 || position > this.bodyfatCells.length) {
             throw new Exception("Position " + position + " is not valid for removal");
         }
+        
+        if (position == 0 && this.bodyfatCells.length == 1) {
+        	this.bodyfatCells = null;
+		}
         
         this.ContractBodyfatByRemovingOneCellFromASpecificPosition(position);
 	}

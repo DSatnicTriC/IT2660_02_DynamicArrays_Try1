@@ -3,6 +3,8 @@ public class BodyfatSimulator {
 	
 	public static void main(String[] args) {
 		
+		bodyfat.ReportThyAmount();
+		
 		var bodyFatInsertionsAtEnd = new int[] {4, 67, 73, 53, 57, 12};
 		for (int i = 0; i < bodyFatInsertionsAtEnd.length; i++) {
 			InsertBodyfatCellAtTheEnd(bodyFatInsertionsAtEnd[i]);
