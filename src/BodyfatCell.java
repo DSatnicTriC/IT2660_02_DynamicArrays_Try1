@@ -1,4 +1,3 @@
-
 public class BodyfatCell {
 	private int bodyfatAmount;
 	
