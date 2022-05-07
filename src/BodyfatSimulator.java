@@ -16,7 +16,16 @@ public class BodyfatSimulator {
 		InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(345, 2);
 		InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(120, 5);
 		
-		bodyfat.ReportThyAmount();		
+		bodyfat.ReportThyAmount();
+		
+		// invalid removal
+		RemoveBodyfatCellAtSpecificPosition(23);
+		
+		// valid removal
+		RemoveBodyfatCellAtSpecificPosition(0);
+		RemoveBodyfatCellAtSpecificPosition(5);
+		
+		bodyfat.ReportThyAmount();
 	}
 	
 	private static void InsertBodyfatCellAtTheEnd(int amount) {
@@ -31,5 +40,14 @@ public class BodyfatSimulator {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}		
+	}
+	
+	private static void RemoveBodyfatCellAtSpecificPosition(int position) {
+		System.out.println("Attempting to remove cell at position " + position);
+		try {
+			bodyfat.RemoveBodyfatCellAtSpecificPosition(position);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}	
 	}
 }

@@ -6,7 +6,8 @@ public class Bodyfat {
 		System.out.println("Current Amounts:");
 		for (int i = 0; i < this.bodyfatCells.length; i++) {
 			System.out.println("Position: " + i + " ... " + "Amount: " + this.bodyfatCells[i].getBodyfatAmount());
-		}		
+		}
+		System.out.println("................");
 	}
 	
 	public void InsertBodyfatCellAtTheEnd(BodyfatCell newCell) {
@@ -20,10 +21,18 @@ public class Bodyfat {
 	
 	public void InsertBodyfatCellAtSpecificPosition(BodyfatCell newCell, int position) throws Exception {
         if (position < 0 || position > this.bodyfatCells.length) {
-            throw new Exception("Position " + position + " is not valid");
+            throw new Exception("Position " + position + " is not valid for insertion");
         }
         
         this.ExpandBodyfatByOneNewCellToSpecificPosition(newCell, position);
+	}
+	
+	public void RemoveBodyfatCellAtSpecificPosition(int position) throws Exception {
+        if (position < 0 || position > this.bodyfatCells.length) {
+            throw new Exception("Position " + position + " is not valid for removal");
+        }
+        
+        this.ContractBodyfatByRemovingOneCellFromASpecificPosition(position);
 	}
 	
 	private void InsertIntoFatFreeBody(BodyfatCell newCell) {
@@ -45,5 +54,21 @@ public class Bodyfat {
         }
         
         this.bodyfatCells = newArray;
-	}	
+	}
+	
+	private void ContractBodyfatByRemovingOneCellFromASpecificPosition(int position) {
+//		var newArray = new BodyfatCell[this.bodyfatCells.length + 1];
+//		 
+//        for (int i = 0; i < position; i++) {
+//        	newArray[i] = this.bodyfatCells[i];        	
+//        }
+//        
+//        newArray[position] = newCell;
+// 
+//        for (int i = position + 1; i <= this.bodyfatCells.length; i++) {
+//        	newArray[i] = this.bodyfatCells[i - 1];
+//        }
+//        
+//        this.bodyfatCells = newArray;
+	}
 }
