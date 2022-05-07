@@ -12,6 +12,10 @@ public class BodyfatSimulator {
 		InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(23, 37);
 		InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(23, 345);
 		
+		// valid insertions
+		InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(345, 2);
+		InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(120, 5);
+		
 		bodyfat.ReportThyAmount();		
 	}
 	
