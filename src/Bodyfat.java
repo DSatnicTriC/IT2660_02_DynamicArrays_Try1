@@ -10,8 +10,10 @@ public class Bodyfat {
 		this.ExpandBodyfatByOneNewCellAtTheEnd(newCell);
 	}
 	
-	public void InsertBodyfatCellAtSpecificPosition(BodyfatCell newCell, int position) {
-		
+	public void InsertBodyfatCellAtSpecificPosition(BodyfatCell newCell, int position) throws Exception {
+        if (position < 0 || position > this.bodyfatCells.length) {
+            throw new Exception("Position " + position + " is not valid");
+        }
 	}
 	
 	private void InsertIntoFatFreeBody(BodyfatCell newCell) {
