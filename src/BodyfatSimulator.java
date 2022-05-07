@@ -8,17 +8,20 @@ public class BodyfatSimulator {
 			InsertBodyfatCellAtTheEnd(bodyFatInsertionsAtEnd[i]);
 		}
 		
-		// invalid insertion
-		InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(23, 23);
+		// invalid insertions
+		InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(23, 37);
+		InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(23, 345);
 		
 		bodyfat.ReportThyAmount();		
 	}
 	
 	private static void InsertBodyfatCellAtTheEnd(int amount) {
+		System.out.println("Attempting to insert " + amount);
 		bodyfat.InsertBodyfatCellAtTheEnd(new BodyfatCell(amount));
 	}
 	
 	private static void InsertBodyfatCellAtInsertBodyfatCellAtSpecificPosition(int amount, int position) {
+		System.out.println("Attempting to insert " + amount + " at position " + position);
 		try {
 			bodyfat.InsertBodyfatCellAtSpecificPosition(new BodyfatCell(amount), position);
 		} catch (Exception e) {

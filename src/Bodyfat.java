@@ -34,6 +34,7 @@ public class Bodyfat {
 	}
 	
 	public void ReportThyAmount() {
+		System.out.println("Final Amounts:");
 		for (int i = 0; i < bodyfatCells.length; i++) {
 			System.out.println("Position: " + i + " ... " + "Amount: " + bodyfatCells[i].getBodyfatAmount());
 		}		
